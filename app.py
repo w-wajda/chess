@@ -12,6 +12,7 @@ from validators import (
 app = Flask(__name__)
 
 
+# widok, a dekorator to url
 @app.route("/api/v1/<chess_figure>/<current_field>", methods=["GET"])
 def list_available_moves(chess_figure: str, current_field: str):
     try:
@@ -60,6 +61,7 @@ def list_available_moves(chess_figure: str, current_field: str):
     )
 
 
+# widok, a dekorator to url
 @app.route("/api/v1/<chess_figure>/<current_field>/<dest_field>", methods=["GET"])
 def validate_move(chess_figure: str, current_field: str, dest_field: str):
     try:
